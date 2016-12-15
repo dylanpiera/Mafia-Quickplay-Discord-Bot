@@ -1,30 +1,31 @@
 package sd.bots.discord.mafiabot;
 
-import sd.bots.discord.mafiabot.commands.*;
-import sd.bots.discord.mafiabot.moduls.Player;
-import sd.bots.discord.mafiabot.util.CommandParser;
-import sd.bots.discord.mafiabot.util.Sneaky;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
+import sd.bots.discord.mafiabot.commands.HelpCommand;
+import sd.bots.discord.mafiabot.commands.JoinCommand;
+import sd.bots.discord.mafiabot.commands.PingCommand;
+import sd.bots.discord.mafiabot.modules.Player;
+import sd.bots.discord.mafiabot.util.CommandParser;
+import sd.bots.discord.mafiabot.util.Sneaky;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main {
 
-    /**
-     * Initialise all variables needed for JDA to work
-     */
-    private static JDA jda;
     public static final CommandParser parser = new CommandParser();
-    public static HashMap<String, Command> commands = new HashMap<String, Command>();
-
+    public static HashMap<String, Command> commands = new HashMap<>();
     /**
      * Initialise variables for MafiaBot
      */
 
     public static ArrayList<Player> playerlist = new ArrayList<>(), alivelist = new ArrayList<>(), deadlist = new ArrayList<>();
+    /**
+     * Initialise all variables needed for JDA to work
+     */
+    private static JDA jda;
 
     public static void main(String[] args) {
         try {
