@@ -27,6 +27,8 @@ public class Player {
         return name;
     }
 
+    public String getRole() {return null;}
+
     public static boolean isPlayerIn(ArrayList<Player> players, User user) {
         for (Player player: players) {
             if(player.name.equals(user.getName())) return true;
