@@ -24,7 +24,7 @@ public class ListCommand implements Command {
         String response = "List of Players in game:\n\n";
 
         for (Player player : playerlist) {
-            response += "- " + player.getName();
+            response += "- " + player.getName() + "\n";
         }
 
         event.getChannel().sendMessage(response).queue();
