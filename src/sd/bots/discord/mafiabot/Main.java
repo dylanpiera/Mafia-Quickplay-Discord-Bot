@@ -3,9 +3,7 @@ package sd.bots.discord.mafiabot;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
-import sd.bots.discord.mafiabot.commands.HelpCommand;
-import sd.bots.discord.mafiabot.commands.JoinCommand;
-import sd.bots.discord.mafiabot.commands.PingCommand;
+import sd.bots.discord.mafiabot.commands.*;
 import sd.bots.discord.mafiabot.modules.Player;
 import sd.bots.discord.mafiabot.util.CommandParser;
 import sd.bots.discord.mafiabot.util.Sneaky;
@@ -38,6 +36,8 @@ public class Main {
 
         commands.put("ping", new PingCommand());
         commands.put("join", new JoinCommand());
+        commands.put("leave", new LeaveCommand());
+        commands.put("list", new ListCommand());
         //always put help last
         commands.put("help", new HelpCommand(commands));
     }
