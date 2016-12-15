@@ -4,6 +4,7 @@ import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import sd.bots.discord.mafiabot.Command;
 import sd.bots.discord.mafiabot.modules.Player;
+import sd.bots.discord.mafiabot.util.Log;
 
 import static sd.bots.discord.mafiabot.Main.playerlist;
 
@@ -39,7 +40,6 @@ public class ListCommand implements Command {
 
         if(!debug) {
             String response = "List of Players in game:\n\n";
-
             for (Player player : playerlist) {
                 response += "- " + player.getName() + "\n";
             }
@@ -48,9 +48,10 @@ public class ListCommand implements Command {
         }
         if(debug) {
             String response = "List of Players in game and their roles!\n\n";
-
             for (Player player : playerlist) {
-                response += "- " + player.getName() + "\t - " + player.getRole() + "\n";
+                String responseString1 = String.format("- %-25s",player.getName());
+                String responseString2 = String.format("- %-25s\n",player.getRole());
+                response += responseString1 + responseString2;
             }
 
             event.getChannel().sendMessage(response).queue();
