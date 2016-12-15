@@ -1,17 +1,12 @@
 package sd.bots.discord.mafiabot.commands;
 
 import sd.bots.discord.mafiabot.Command;
-import sd.bots.discord.mafiabot.moduls.Player;
+import sd.bots.discord.mafiabot.modules.Player;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 import static sd.bots.discord.mafiabot.Main.playerlist;
 
-/**
- * Created by dylan on 10-9-2016.
- */
 public class JoinCommand implements Command {
-
-
 
     @Override
     public boolean called(String[] args, MessageReceivedEvent event) {

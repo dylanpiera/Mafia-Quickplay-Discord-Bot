@@ -3,7 +3,7 @@ package sd.bots.discord.mafiabot.commands;
 import sd.bots.discord.mafiabot.Command;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
- * Created by dylan on 10-9-2016.
+ * Default "Test if bot works" command.
  */
 public class PingCommand implements Command {
 
