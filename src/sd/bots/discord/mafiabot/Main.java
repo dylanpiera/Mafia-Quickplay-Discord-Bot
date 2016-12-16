@@ -38,6 +38,7 @@ public class Main {
         commands.put("join", new JoinCommand());
         commands.put("leave", new LeaveCommand());
         commands.put("list", new ListCommand());
+        commands.put("assign", new AssignCommand());
         //always put help last
         commands.put("help", new HelpCommand(commands));
     }
