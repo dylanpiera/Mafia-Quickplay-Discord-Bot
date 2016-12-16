@@ -14,15 +14,18 @@ public class Player {
     private Member JDAmember;
     private String name;
     private String alignment;
+    private String role;
 
     public static final String VILLAGE = "Village";
     public static final String MAFIA = "Mafia";
     public static final String THIRD_PARTY = "Third_Party";
+    public static final String VANILLA = "Vanilla";
 
-    public Player(Member JDAmember) {
+    public Player(Member JDAmember, String alignment, String role) {
         this.JDAmember = JDAmember;
         this.name = JDAmember.getUser().getName();
-        this.alignment = JDAmember.getUser().getAlignment();
+        this.alignment = alignment;
+        this.role = role;
     }
 
     public Member getJDAmember() {
@@ -33,11 +36,7 @@ public class Player {
         return name;
     }
 
-    public String getRole() {return null;}
-
-/*    public String getAlignment(){
-        return null;
-    } */
+    public String getRole() {return this.role;}
 
     public String getAlignment(){
         return this.alignment;
@@ -54,5 +53,13 @@ public class Player {
             if(player.name.equals(name)) return true;
         }
         return false;
+    }
+
+    public void assignAlignment(String alignment){
+        this.alignment = alignment;
+    }
+
+    public void assignRole(String role){
+        // this.role = role;
     }
 }

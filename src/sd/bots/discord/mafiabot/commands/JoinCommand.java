@@ -19,7 +19,8 @@ public class JoinCommand implements Command {
 
     @Override
     public void action(String[] args, MessageReceivedEvent event) {
-        playerlist.add(new Player(event.getMember()));
+        playerlist.add(new Player(event.getMember(), Player.VILLAGE, Player.VANILLA));
+        // TO-DO: Add fix .VILLAGE to actual alignment and .VANILLA for actual roles
         event.getChannel().sendMessage(event.getMember().getUser().getAsMention() + " joined the game!").queue();
     }
 
