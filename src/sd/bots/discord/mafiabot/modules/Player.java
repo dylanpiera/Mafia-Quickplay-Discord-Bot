@@ -13,10 +13,16 @@ public class Player {
 
     private Member JDAmember;
     private String name;
+    private String alignment;
+
+    public static final String VILLAGE = "Village";
+    public static final String MAFIA = "Mafia";
+    public static final String THIRD_PARTY = "Third_Party";
 
     public Player(Member JDAmember) {
         this.JDAmember = JDAmember;
         this.name = JDAmember.getUser().getName();
+        this.alignment = JDAmember.getUser().getAlignment();
     }
 
     public Member getJDAmember() {
@@ -28,6 +34,14 @@ public class Player {
     }
 
     public String getRole() {return null;}
+
+/*    public String getAlignment(){
+        return null;
+    } */
+
+    public String getAlignment(){
+        return this.alignment;
+    }
 
     public static boolean isPlayerIn(ArrayList<Player> players, User user) {
         for (Player player: players) {
