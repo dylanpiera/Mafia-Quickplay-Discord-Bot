@@ -9,23 +9,19 @@ import java.util.ArrayList;
  * Used to store all information required for the game of Mafia +
  * the JDA Member class for each player.
  */
+
 public class Player {
 
     private Member JDAmember;
     private String name;
     private String alignment;
-    private String role;
-
-    public static final String VILLAGE = "Village";
-    public static final String MAFIA = "Mafia";
-    public static final String THIRD_PARTY = "Third_Party";
-    public static final String VANILLA = "Vanilla";
+    private Role role;
 
     public Player(Member JDAmember, String alignment, String role) {
         this.JDAmember = JDAmember;
         this.name = JDAmember.getUser().getName();
         this.alignment = alignment;
-        this.role = role;
+        //this.role = role;
     }
 
     public Member getJDAmember() {
@@ -36,7 +32,7 @@ public class Player {
         return name;
     }
 
-    public String getRole() {return this.role;}
+    public String getRole() {return this.role.toString();}
 
     public String getAlignment(){
         return this.alignment;
